@@ -1,0 +1,1951 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shravan Amrit — गूंगापन और भरहरापन का आयुर्वेदिक उपचार</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            /* ── BRAND PALETTE ── Change these to retheme entire page */
+            'primary': '#C45A10',   /* saffron-dark — main CTA, headings */
+            'primary-lt': '#E8742A',   /* saffron — buttons, accents */
+            'primary-xl': '#F5A55A',   /* light saffron — hover, borders */
+            'accent': '#F5C842',   /* turmeric — badges, highlights */
+            'accent-lt': '#FDE98A',   /* light turmeric — bg tints */
+            'success': '#3D7A48',   /* leaf — trust, ticks */
+            'success-lt': '#EAF4EC',   /* leaf-light — success bg */
+            'danger': '#C0392B',   /* warning red */
+            'danger-lt': '#FDF0EE',   /* warning bg */
+            'bg-base': '#FDF6EC',   /* warm cream — page bg */
+            'bg-card': '#FFFDF8',   /* white-warm — cards */
+            'bg-section': '#F7EAD6',   /* cream-dark — alt sections */
+            'text-head': '#2C1A0E',   /* dark brown — headings */
+            'text-body': '#4A2E14',   /* medium brown — body */
+            'text-mute': '#A07850',   /* muted — captions */
+            'border-soft': '#E8D5B8',   /* soft border */
+            'bark': '#7B4F2E',   /* bark brown — dark cards */
+          },
+          fontFamily: {
+            'hind': ['Hind', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * {
+      font-family: 'Hind', sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #e8d8c0;
+      min-height: 100vh;
+    }
+
+    /* ── Page wrapper — centered, max 450px ── */
+    .page-wrap {
+      max-width: 450px;
+      margin: 0 auto;
+      background: #FDF6EC;
+      position: relative;
+      overflow-x: hidden;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+    }
+
+    /* ── Coupon overlay ── */
+    #coupon-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(44, 26, 14, 0.65);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      animation: fadeIn .4s ease;
+    }
+
+    #coupon-box {
+      max-width: 400px;
+      width: 100%;
+      background: linear-gradient(145deg, #FFFDF8, #FDF6EC);
+      border-radius: 20px;
+      border: 3px solid #F5C842;
+      padding: 32px 24px 28px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(196, 90, 16, 0.3);
+      animation: popIn .5s cubic-bezier(.34, 1.56, .64, 1);
+    }
+
+    .coupon-close {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      width: 28px;
+      height: 28px;
+      background: #E8742A;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      line-height: 1;
+    }
+
+    .coupon-code-box {
+      background: linear-gradient(135deg, #F5C842, #E8742A);
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin: 16px 0;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: #fff;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .coupon-confetti {
+      font-size: 40px;
+      animation: bounce 1s infinite alternate;
+    }
+
+    @keyframes bounce {
+      to {
+        transform: translateY(-8px);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes popIn {
+      from {
+        transform: scale(.7);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* ── Hero gradient ── */
+    .hero-bg {
+      background: linear-gradient(160deg, #FDF6EC 0%, #F7EAD6 50%, #FDE98A33 100%);
+    }
+
+    /* ── Ticker ── */
+    .ticker-wrap {
+      overflow: hidden;
+    }
+
+    .ticker-inner {
+      display: flex;
+      animation: ticker 18s linear infinite;
+      white-space: nowrap;
+    }
+
+    .ticker-inner span {
+      padding: 0 32px;
+    }
+
+    @keyframes ticker {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ── Step connector ── */
+    .step-line::after {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 40px;
+      width: 2px;
+      height: calc(100% + 8px);
+      background: linear-gradient(to bottom, #E8742A, #F5C842);
+    }
+
+    .step-wrap:last-child .step-line::after {
+      display: none;
+    }
+
+    /* ── CTA pulse ── */
+    .cta-pulse {
+      animation: ctaPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes ctaPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(232, 116, 42, 0.5);
+      }
+
+      50% {
+        box-shadow: 0 0 0 12px rgba(232, 116, 42, 0);
+      }
+    }
+
+    /* ── Ingredient card hover ── */
+    .ingr-card {
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .ingr-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(196, 90, 16, 0.15);
+    }
+
+    /* ── FAQ accordion ── */
+    .faq-answer {
+      display: none;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    .faq-item.open .faq-arrow {
+      transform: rotate(180deg);
+    }
+
+    .faq-arrow {
+      transition: transform .25s;
+    }
+
+    /* ── Comparison table ── */
+    .comp-row:nth-child(even) {
+      background: #FDF6EC;
+    }
+
+    /* ── Stars ── */
+    .stars {
+      color: #F5C842;
+      letter-spacing: 1px;
+    }
+
+    /* ── Scrollbar hidden ── */
+    ::-webkit-scrollbar {
+      width: 0;
+    }
+
+    /* ── Countdown ── */
+    .countdown-box {
+      background: linear-gradient(135deg, #C45A10, #E8742A);
+      border-radius: 10px;
+      padding: 6px 10px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+      min-width: 44px;
+      text-align: center;
+    }
+
+    /* ── Sticky bottom CTA ── */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 450px;
+      z-index: 500;
+      transition: opacity .3s;
+    }
+
+    /* ── Section divider ── */
+    .leaf-divider {
+      text-align: center;
+      font-size: 22px;
+      margin: 4px 0;
+      opacity: .6;
+    }
+
+    .ayur-section {
+      background: linear-gradient(170deg, #FFFDF8 0%, #F7EAD6 100%);
+      padding: 32px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ayur-section::before {
+      content: '🕉️';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      font-size: 120px;
+      opacity: .04;
+      line-height: 1;
+    }
+
+    /* Big quote block */
+    .ayur-quote {
+      background: linear-gradient(135deg, #2C1A0E, #4A2E14);
+      border-radius: 20px;
+      padding: 22px 20px;
+      margin-bottom: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ayur-quote::before {
+      content: '❝';
+      position: absolute;
+      top: -8px;
+      left: 12px;
+      font-size: 80px;
+      color: #F5C842;
+      opacity: .2;
+      line-height: 1;
+      font-family: serif;
+    }
+
+    .ayur-quote::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, #F5C84222, transparent 70%);
+      border-radius: 50%;
+    }
+
+    /* Sanskrit shloka */
+    .shloka-box {
+      background: linear-gradient(135deg, #FDE98A22, #F5C84233);
+      border: 1px solid #F5C84288;
+      border-radius: 16px;
+      padding: 18px;
+      margin: 20px 0;
+      position: relative;
+    }
+
+    .shloka-box::before {
+      content: '📜';
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 26px;
+      background: #FDF6EC;
+      padding: 0 8px;
+    }
+
+    /* Pillar cards */
+    .pillar-card {
+      background: #FFFDF8;
+      border-radius: 16px;
+      border: 1px solid #E8D5B8;
+      padding: 16px;
+      margin-bottom: 12px;
+      position: relative;
+      overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .pillar-card:active {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(196, 90, 16, .15);
+    }
+
+    .pillar-stripe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      border-radius: 16px 0 0 16px;
+    }
+
+    /* Summary bullet */
+    .sum-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px solid #E8D5B820;
+    }
+
+    .sum-row:last-child {
+      border-bottom: none;
+    }
+
+    .sum-tick {
+      width: 22px;
+      height: 22px;
+      background: linear-gradient(135deg, #3D7A48, #6CAE7A);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Fade-in on scroll */
+    .fadein-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+
+    .fadein-up.vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ══════════════ COUPON OVERLAY ══════════════ -->
+  <div id="coupon-overlay">
+    <div id="coupon-box">
+      <button class="coupon-close" onclick="closeCoupon()">✕</button>
+      <div class="coupon-confetti">🎉</div>
+      <h2 style="color:#C45A10;font-size:20px;font-weight:700;margin:8px 0 4px;">बधाई हो आपको!</h2>
+      <p style="color:#4A2E14;font-size:14px;margin-bottom:10px;">आपके लिए एक <strong style="color:#C45A10;">विशेष
+          उपहार</strong></p>
+
+      <!-- BIG 10% Highlight -->
+      <div
+        style="background:linear-gradient(135deg,#C45A10,#E8742A);border-radius:16px;padding:18px 12px;margin-bottom:14px;position:relative;overflow:hidden;">
+        <div
+          style="position:absolute;top:-20px;right:-20px;width:80px;height:80px;background:rgba(255,255,255,.1);border-radius:50%;">
+        </div>
+        <div
+          style="position:absolute;bottom:-15px;left:-15px;width:60px;height:60px;background:rgba(255,255,255,.08);border-radius:50%;">
+        </div>
+        <div style="font-size:72px;font-weight:700;color:#fff;line-height:1;text-shadow:0 4px 12px rgba(0,0,0,.25);">10%
+        </div>
+        <div style="font-size:22px;font-weight:700;color:#FDE98A;margin-top:2px;letter-spacing:1px;">EXTRA छूट</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.85);margin-top:4px;">आपके पहले ऑर्डर पर — सिर्फ आज!</div>
+      </div>
+
+      <!-- Coupon Code -->
+      <p style="color:#A07850;font-size:12px;margin-bottom:6px;font-weight:600;">👇 नीचे दिया Code ऑर्डर में लगाएँ</p>
+      <div class="coupon-code-box" onclick="copyCode()" id="coupon-code" title="क्लिक करके कॉपी करें">
+        🌿 SHRAVAN10
+      </div>
+      <p style="color:#7B4F2E;font-size:12px;font-weight:600;margin-bottom:10px;">👆 क्लिक करके Code Copy करें</p>
+
+      <button onclick="closeCoupon()"
+        style="background:linear-gradient(135deg,#C45A10,#E8742A);color:#fff;border:none;border-radius:12px;padding:13px 32px;font-size:15px;font-weight:700;cursor:pointer;width:100%;">
+        🛒 अभी ऑर्डर करें
+      </button>
+      <p style="color:#A07850;font-size:11px;margin-top:8px;">⏰ यह offer सीमित समय के लिए है</p>
+    </div>
+  </div>
+
+  <!-- ══════════════ PAGE WRAPPER ══════════════ -->
+  <div class="page-wrap">
+
+    <!-- ── TICKER ── -->
+    <div style="background:#C45A10;padding:7px 0;" class="ticker-wrap">
+      <div class="ticker-inner" style="color:#FDE98A;font-size:12px;font-weight:600;">
+        <span>🌿 100% आयुर्वेदिक</span><span>⚡ 7 दिन में असर</span><span>🏛️ AYUSH प्रमाणित</span><span>🚚 FREE
+          Delivery</span><span>💰 30 दिन Money Back</span><span>🌿 10,000+ ग्राहक</span>
+        <!-- duplicate for seamless loop -->
+        <span>🌿 100% आयुर्वेदिक</span><span>⚡ 7 दिन में असर</span><span>🏛️ AYUSH प्रमाणित</span><span>🚚 FREE
+          Delivery</span><span>💰 30 दिन Money Back</span><span>🌿 10,000+ ग्राहक</span>
+      </div>
+    </div>
+
+    <!-- ══════════════ SECTION 1 — HERO ══════════════ -->
+    <section class="hero-bg" style="padding:28px 20px 24px;">
+      <!-- Brand badge -->
+      <div
+        style="display:inline-flex;align-items:center;gap:6px;background:#EAF4EC;border:1px solid #6CAE7A;border-radius:20px;padding:5px 14px;margin-bottom:14px;">
+        <span style="color:#3D7A48;font-size:13px;font-weight:600;">🌿 प्राचीन आयुर्वेद — आधुनिक समाधान</span>
+      </div>
+      <h1 style="color:#2C1A0E;font-size:26px;font-weight:700;line-height:1.3;margin-bottom:8px;">
+        क्या आपकी <span style="color:#C45A10;">आवाज़ खो गई</span> है या शरीर <span style="color:#C45A10;">कांपता</span>
+        है?
+      </h1>
+      <p style="color:#4A2E14;font-size:15px;font-weight:500;margin-bottom:18px;line-height:1.6;">
+        गूंगापन और भरहरापन — दोनों का एक ही आयुर्वेदिक इलाज अब मौजूद है।
+      </p>
+
+      <!-- Hero image placeholder -->
+      <div style="border-radius:16px;overflow:hidden;margin-bottom:18px;position:relative;">
+        <img src="https://images.unsplash.com/photo-1599032909736-b6e7c6a84c8e?w=450&h=240&fit=crop&auto=format"
+          alt="Ayurvedic herbs" style="width:100%;height:200px;object-fit:cover;display:block;"
+          onerror="this.style.background='linear-gradient(135deg,#F7EAD6,#FDE98A)';this.alt='';">
+        <div
+          style="position:absolute;inset:0;background:linear-gradient(to top,rgba(44,26,14,.55),transparent);border-radius:16px;">
+        </div>
+        <div style="position:absolute;bottom:14px;left:16px;right:16px;">
+          <span
+            style="background:#F5C842;color:#2C1A0E;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;">✨
+            Shravan Amrit — आयुर्वेदिक फॉर्मूला</span>
+        </div>
+      </div>
+
+      <!-- Hero stats -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:20px;">
+        <div style="background:#FFFDF8;border:1px solid #E8D5B8;border-radius:12px;padding:12px 8px;text-align:center;">
+          <div style="font-size:22px;font-weight:700;color:#C45A10;">10K+</div>
+          <div style="font-size:11px;color:#A07850;font-weight:500;">संतुष्ट ग्राहक</div>
+        </div>
+        <div style="background:#FFFDF8;border:1px solid #E8D5B8;border-radius:12px;padding:12px 8px;text-align:center;">
+          <div style="font-size:22px;font-weight:700;color:#C45A10;">7</div>
+          <div style="font-size:11px;color:#A07850;font-weight:500;">दिन में असर</div>
+        </div>
+        <div style="background:#FFFDF8;border:1px solid #E8D5B8;border-radius:12px;padding:12px 8px;text-align:center;">
+          <div style="font-size:22px;font-weight:700;color:#C45A10;">4.8⭐</div>
+          <div style="font-size:11px;color:#A07850;font-weight:500;">रेटिंग</div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <a onclick="scrollToOrderForm()">
+        <button class="cta-pulse"
+          style="width:100%;background:linear-gradient(135deg,#C45A10,#E8742A);color:#fff;border:none;border-radius:14px;padding:16px;font-size:17px;font-weight:700;cursor:pointer;letter-spacing:.3px;">
+          🛒 अभी ऑर्डर करें
+        </button>
+      </a>
+      <p style="text-align:center;color:#A07850;font-size:12px;margin-top:8px;">🔒 SSL Secure | COD Available | Free
+        Delivery | 30 दिन Money Back</p>
+    </section>
+
+    <div class="leaf-divider">🍃 ✦ 🍃</div>
+
+    <!-- ══════════════ SECTION 2 — PAIN ══════════════ -->
+    <section style="background:#F7EAD6;padding:28px 20px;">
+      <div style="text-align:center;margin-bottom:6px;">
+        <span
+          style="background:#C45A10;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:.5px;">🧠
+          PROBLEM SECTION</span>
+      </div>
+      <h2 style="color:#2C1A0E;font-size:21px;font-weight:700;text-align:center;margin:10px 0 18px;line-height:1.35;">
+        अंदर क्या हो रहा है?
+      </h2>
+
+      <p style="color:#4A2E14;font-size:13px;line-height:1.8;margin-bottom:14px;text-align:center;">
+        <strong>गूंगापन और बहरापन अक्सर जुड़ी हुई समस्याएँ हैं।</strong>
+      </p>
+
+      <div style="background:#FFFDF8;border-radius:14px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);margin-bottom:12px;transition:transform 0.3s ease, box-shadow 0.3s ease;">
+        <div style="width:100%;height:280px;overflow:hidden;background:#F0E8DC;">
+          <img src="./Image/Pro1.png" alt="सुनने वाली नसें" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div style="padding:16px;border-left:4px solid #C45A10;">
+          <p style="color:#2C1A0E;font-size:20px;font-weight:700;line-height:1.6;margin:0;"><strong>सुनने वाली नसें कमजोर होने लगती हैं</strong></p>
+        </div>
+      </div>
+
+       <div style="background:#FDF6EC;border-radius:14px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);margin-bottom:12px;transition:transform 0.3s ease, box-shadow 0.3s ease;">
+        <div style="width:100%;height:280px;overflow:hidden;background:#F0E8DC;">
+          <img src="./Image/Pro4.png" alt="Speech coordination" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div style="padding:16px;border-left:4px solid #FDE98A;">
+          <p style="color:#2C1A0E;font-size:20px;font-weight:700;line-height:1.6;margin:0;"><strong>speech coordination प्रभावित होती है</strong></p>
+        </div>
+      </div>
+
+      <div style="background:#FDF6EC;border-radius:14px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);margin-bottom:12px;transition:transform 0.3s ease, box-shadow 0.3s ease;">
+        <div style="width:100%;height:280px;overflow:hidden;background:#F0E8DC;">
+          <img src="./Image/Pro2.png" alt="कान में infection" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div style="padding:16px;border-left:4px solid #E8742A;">
+          <p style="color:#2C1A0E;font-size:20px;font-weight:700;line-height:1.6;margin:0;"><strong>बार-बार कान में infection होता है</strong></p>
+        </div>
+      </div>
+
+       <div style="background:#FFFDF8;border-radius:14px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);margin-bottom:14px;transition:transform 0.3s ease, box-shadow 0.3s ease;">
+        <div style="width:100%;height:280px;overflow:hidden;background:#F0E8DC;">
+          <img src="./Image/Pro5.png" alt="Nervous system" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div style="padding:16px;border-left:4px solid #C45A10;">
+          <p style="color:#2C1A0E;font-size:20px;font-weight:700;line-height:1.6;margin:0;"><strong>nervous system कमजोर पड़ता है</strong></p>
+        </div>
+      </div>
+
+           
+
+      <div style="background:#FFFDF8;border-radius:14px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);margin-bottom:12px;transition:transform 0.3s ease, box-shadow 0.3s ease;">
+        <div style="width:100%;height:280px;overflow:hidden;background:#F0E8DC;">
+          <img src="./Image/Pro3.png" alt="Brain signals" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div style="padding:16px;border-left:4px solid #F5C842;">
+          <p style="color:#2C1A0E;font-size:20px;font-weight:700;line-height:1.6;margin:0;"><strong>brain तक sound signals सही नहीं पहुँचते</strong></p>
+        </div>
+      </div>
+
+
+
+     
+
+      <p style="color:#4A2E14;font-size:15px;line-height:1.8;margin-bottom:14px;text-align:center;">
+        <strong>👉 तब धीरे-धीरे बोलने और सुनने दोनों पर असर पड़ता है।</strong>
+      </p>
+
+      <div style="background:#FDF0EE;border:2px solid #C0392B;border-radius:14px;padding:16px;margin-bottom:18px;">
+        <p style="color:#4A2E14;font-size:15px;line-height:1.8;margin:0;">
+          कई लोग इसे "आदत" समझ लेते हैं,<br>
+          लेकिन असल में यह neurological और ear imbalance का संकेत हो सकता है।
+        </p>
+      </div>
+    </section>
+
+    <div class="leaf-divider">🍃 ✦ 🍃</div>
+
+    <!-- ══════════════ SECTION 3 — PRODUCT ══════════════ -->
+    <section style="padding:28px 20px;background:#FDF6EC;">
+      <div style="text-align:center;margin-bottom:4px;">
+        <span
+          style="background:#EAF4EC;color:#3D7A48;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;border:1px solid #6CAE7A;">🌿
+          PRODUCT INTRODUCTION</span>
+      </div>
+      <p style="text-align:center;color:#000;font-size:18px;margin:10px 0 4px;">एक Ayurvedic support formula</p>
+      <h2 style="text-align:center;font-size:26px;font-weight:700;color:#C45A10;margin-bottom:8px;">Shravan Amrit</h2>
+
+      <!-- Product image -->
+      <div style="border-radius:20px;overflow:hidden;margin-bottom:22px;border:2px solid #E8D5B8;position:relative;">
+        <img src="./Image/Intro.png"
+          alt="Shravan Amrit Product" style="width:100%;height:auto;object-fit:cover;"
+          onerror="this.style.background='linear-gradient(135deg,#F7EAD6,#FDE98A)';this.alt='';">
+        <div
+          style="position:absolute;top:10px;right:14px;background:linear-gradient(135deg,#C45A10,#E8742A);color:#fff;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:700;">
+          57% OFF 🏷️</div>
+      </div>
+
+      <!-- Feature grid -->
+      <div style="display:grid;grid-template-columns:1fr;gap:14px;">
+
+        <div style="background:linear-gradient(135deg,#F0F9F6,#FFFDF8);border-radius:16px;padding:20px;display:flex;gap:16px;align-items:flex-start;box-shadow:0 4px 16px rgba(61,122,72,0.12);border:1px solid #E8F2ED;transition:all 0.3s ease;">
+          <div style="min-width:60px;height:60px;background:linear-gradient(135deg,#3D7A48,#6CAE7A);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 12px rgba(61,122,72,0.2);">🧬</div>
+          <div style="flex:1;">
+            <div style="font-weight:800;color:#2C1A0E;font-size:16px;margin-bottom:8px;line-height:1.3;">नसों को पोषण 💪</div>
+            <div style="color:#4A2E14;font-size:13px;line-height:1.7;margin-bottom:6px;">आवाज़ और संतुलन से जुड़ी नाड़ियों को अंदर से पोषण और शक्ति देता है</div>
+            <div style="background:rgba(61,122,72,0.1);border-left:3px solid #3D7A48;padding:8px 12px;border-radius:6px;font-size:12px;color:#3D7A48;font-weight:600;">✓ नसें मजबूत बने — आवाज़ साफ आए</div>
+          </div>
+        </div>
+
+        <div style="background:linear-gradient(135deg,#FFF9F0,#FFFDF8);border-radius:16px;padding:20px;display:flex;gap:16px;align-items:flex-start;box-shadow:0 4px 16px rgba(196,90,16,0.12);border:1px solid #F7EAD6;transition:all 0.3s ease;">
+          <div style="min-width:60px;height:60px;background:linear-gradient(135deg,#C45A10,#E8742A);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 12px rgba(196,90,16,0.2);">🧠</div>
+          <div style="flex:1;">
+            <div style="font-weight:800;color:#2C1A0E;font-size:16px;margin-bottom:8px;line-height:1.3;">Brain–Nervous System Coordination 🔗</div>
+            <div style="color:#4A2E14;font-size:13px;line-height:1.7;margin-bottom:6px;">मस्तिष्क और नसों के बीच संवाद को बेहतर बनाता है</div>
+            <div style="background:rgba(196,90,16,0.1);border-left:3px solid #C45A10;padding:8px 12px;border-radius:6px;font-size:12px;color:#C45A10;font-weight:600;">✓ मस्तिष्क-कान जुड़ाव बेहतर हो — सुनना साफ हो</div>
+          </div>
+        </div>
+
+        <div style="background:linear-gradient(135deg,#FFFEF0,#FFFDF8);border-radius:16px;padding:20px;display:flex;gap:16px;align-items:flex-start;box-shadow:0 4px 16px rgba(245,200,66,0.12);border:1px solid #FDE98A;transition:all 0.3s ease;">
+          <div style="min-width:60px;height:60px;background:linear-gradient(135deg,#F5C842,#FDE98A);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 12px rgba(245,200,66,0.2);">🗣️</div>
+          <div style="flex:1;">
+            <div style="font-weight:800;color:#2C1A0E;font-size:16px;margin-bottom:8px;line-height:1.3;">Speech Clarity में मदद ✨</div>
+            <div style="color:#4A2E14;font-size:13px;line-height:1.7;margin-bottom:6px;">आवाज़ की नली को खोलता है और बोलने की क्षमता को धीरे-धीरे बेहतर करता है</div>
+            <div style="background:rgba(245,200,66,0.1);border-left:3px solid #F5C842;padding:8px 12px;border-radius:6px;font-size:12px;color:#C45A10;font-weight:600;">✓ बोली साफ हो — हकलाहट कम हो</div>
+          </div>
+        </div>
+
+        <div style="background:linear-gradient(135deg,#FFFBF7,#FFFDF8);border-radius:16px;padding:20px;display:flex;gap:16px;align-items:flex-start;box-shadow:0 4px 16px rgba(232,116,42,0.12);border:1px solid #E8D5B8;transition:all 0.3s ease;">
+          <div style="min-width:60px;height:60px;background:linear-gradient(135deg,#E8742A,#F5A55A);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 12px rgba(232,116,42,0.2);">⚡</div>
+          <div style="flex:1;">
+            <div style="font-weight:800;color:#2C1A0E;font-size:16px;margin-bottom:8px;line-height:1.3;">Nervous Strength Improve 🛡️</div>
+            <div style="color:#4A2E14;font-size:13px;line-height:1.7;margin-bottom:6px;">भरहरापन में कंपकंपी को कम करता है और नसों को मज़बूत बनाता है</div>
+            <div style="background:rgba(232,116,42,0.1);border-left:3px solid #E8742A;padding:8px 12px;border-radius:6px;font-size:12px;color:#E8742A;font-weight:600;">✓ कंपन रुक जाए — हाथ-पैर स्थिर रहें</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="leaf-divider">🍃 ✦ 🍃</div>
+
+    <!-- ══════════════ SECTION 4 — HOW IT WORKS ══════════════ -->
+    <section style="background:#F7EAD6;padding:28px 20px;">
+      <div style="text-align:center;margin-bottom:6px;">
+        <span
+          style="background:#C45A10;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">⚙️
+          कार्य प्रणाली</span>
+      </div>
+      <h2 style="text-align:center;font-size:21px;font-weight:700;color:#2C1A0E;margin:10px 0 6px;">Shravan Amrit कैसे
+        काम करता है?</h2>
+      <p style="text-align:center;color:#A07850;font-size:13px;margin-bottom:22px;">पहले जड़, फिर नसें, फिर पूरा शरीर —
+        तीन स्तरों पर उपचार</p>
+
+      <!-- Steps -->
+      <div style="position:relative;">
+
+        <div class="step-wrap" style="display:flex;gap:14px;margin-bottom:20px;position:relative;">
+          <div class="step-line" style="position:relative;flex-shrink:0;">
+            <div
+              style="width:40px;height:40px;background:linear-gradient(135deg,#C45A10,#E8742A);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;position:relative;z-index:1;">
+              1</div>
+          </div>
+          <div style="background:#FFFDF8;border-radius:14px;padding:14px;flex:1;border:1px solid #E8D5B8;">
+            <img src="./Image/work1.png" class="w-full h-72 rounded-3xl mb-5"  alt="">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+              <!-- <span style="font-size:18px;">⚖️</span> -->
+              <span style="font-weight:700;color:#2C1A0E;font-size:20px;">Vata-Kapha संतुलन</span>
+              <span
+                style="background:#FDE98A;color:#7B4F2E;font-size:16px;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:auto;">दिन
+                1-7</span>
+            </div>
+            <p style="color:#4A2E14;font-size:12px;line-height:1.6;">विशेष जड़ी-बूटियाँ Vata और Kapha दोषों को संतुलित
+              करना शुरू करती हैं — यही गूंगापन और भरहरापन की असली जड़ है।</p>
+          </div>
+        </div>
+
+        <div class="step-wrap" style="display:flex;gap:14px;margin-bottom:20px;position:relative;">
+          <div class="step-line" style="position:relative;flex-shrink:0;">
+            <div
+              style="width:40px;height:40px;background:linear-gradient(135deg,#E8742A,#F5A55A);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;position:relative;z-index:1;">
+              2</div>
+          </div>
+          <div style="background:#FFFDF8;border-radius:14px;padding:14px;flex:1;border:1px solid #E8D5B8;">
+            <img src="./Image/work2.png" class="w-full h-72 rounded-3xl mb-5"  alt="">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+              <span style="font-size:18px;">🧠</span>
+              <span style="font-weight:700;color:#2C1A0E;font-size:20px;">नाड़ी पोषण</span>
+              <span
+                style="background:#FDE98A;color:#7B4F2E;font-size:16px;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:auto;">दिन
+                8-14</span>
+            </div>
+            <p style="color:#4A2E14;font-size:12px;line-height:1.6;">Ashwagandha और Brahmi कमज़ोर नसों को पुनर्जीवित
+              करती हैं। भरहरापन की कंपकंपी 14 दिनों में काफी हद तक कम होने लगती है।</p>
+          </div>
+        </div>
+
+        <div class="step-wrap" style="display:flex;gap:14px;margin-bottom:20px;position:relative;">
+          <div class="step-line" style="position:relative;flex-shrink:0;">
+            <div
+              style="width:40px;height:40px;background:linear-gradient(135deg,#F5A55A,#F5C842);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;position:relative;z-index:1;">
+              3</div>
+          </div>
+          <div style="background:#FFFDF8;border-radius:14px;padding:14px;flex:1;border:1px solid #E8D5B8;">
+            <img src="./Image/work3.png" class="w-full h-72 rounded-3xl mb-5"  alt="">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+              <span style="font-size:18px;">🗣️</span>
+              <span style="font-weight:700;color:#2C1A0E;font-size:20px;">वाचा-शक्ति</span>
+              <span
+                style="background:#FDE98A;color:#7B4F2E;font-size:16px;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:auto;">दिन
+                14-21</span>
+            </div>
+            <p style="color:#4A2E14;font-size:12px;line-height:1.6;">Yashtimadhu आवाज़ की नली की सूजन कम करता है और
+              गूंगापन में आवाज़ वापस लाने का काम करता है।</p>
+          </div>
+        </div>
+
+        <div class="step-wrap" style="display:flex;gap:14px;position:relative;">
+          <div class="step-line" style="position:relative;flex-shrink:0;">
+            <div
+              style="width:40px;height:40px;background:linear-gradient(135deg,#3D7A48,#6CAE7A);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;position:relative;z-index:1;">
+              ✓</div>
+          </div>
+          <div style="background:#EAF4EC;border-radius:14px;padding:14px;flex:1;border:1px solid #6CAE7A;">
+            <img src="./Image/work4.png" class="w-full h-72 rounded-3xl mb-5"  alt="">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+              <!-- <span style="font-size:18px;">💪</span> -->
+              <span style="font-weight:700;color:#2C1A0E;font-size:20px;">समग्र सुधार</span>
+              <span
+                style="background:#3D7A48;color:#fff;font-size:16px;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:auto;">दिन
+                21+</span>
+            </div>
+            <p style="color:#4A2E14;font-size:12px;line-height:1.6;">आवाज़ साफ होती है, कंपकंपी बंद होती है, नींद आती है
+              और आत्मविश्वास वापस आता है।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="leaf-divider">🍃 ✦ 🍃</div>
+
+    <!-- ══════════════ SECTION 5 — AYURVEDA KNOWLEDGE ══════════════ -->
+    <section class="ayur-section">
+      <!-- Badge + heading -->
+      <div style="text-align:center;margin-bottom:6px;">
+        <span
+          style="background:#FDE98A;color:#7B4F2E;font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;border:1px solid #F5C842;">📖
+          आयुर्वेद का दृष्टिकोण</span>
+      </div>
+      <h2 style="text-align:center;font-size:20px;font-weight:700;color:#2C1A0E;margin:10px 0 4px;line-height:1.35;">
+        आयुर्वेद क्या कहता है —<br><span style="color:#C45A10;">गूंगापन और भरहरापन</span> के बारे में?</h2>
+      <p style="text-align:center;color:#A07850;font-size:12px;margin-bottom:20px;">5000 वर्ष पुराना प्रमाणित ज्ञान</p>
+
+      <!-- Big quote -->
+      <div class="ayur-quote fadein-up" id="ayq1">
+        <p style="color:#F7EAD6;font-size:14px;line-height:1.85;position:relative;z-index:1;margin:0;">
+          <span style="color:#F5C842;font-weight:700;font-size:16px;"></span>
+          <img src="./Image/Doctor.png" class="w-full h-auto my-5 rounded-2xl" alt="">
+          आयुर्वेद मानता है कि — <br>
+          गूंगापन सिर्फ ज़ुबान की समस्या नहीं,<br>
+          और भरहरापन सिर्फ नसों की नहीं —<br>
+          <strong style="color:#F5C842;">यह मन, नसों और संतुलन से जुड़ी गहरी स्थिति है।</strong>
+          <span style="color:#F5C842;font-weight:700;font-size:16px;">"</span>
+        </p>
+      </div>
+
+      <!-- Explanation -->
+      <!-- <div class="fadein-up" id="ayq2" style="transition-delay:.1s;">
+      <div style="display:flex;gap:12px;margin-bottom:16px;">
+        <div style="min-width:40px;height:40px;background:linear-gradient(135deg,#F5C842,#E8742A);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">📚</div>
+        <p style="color:#4A2E14;font-size:13px;line-height:1.8;margin:0;">प्राचीन ग्रंथों में गूंगापन को <strong style="color:#C45A10;">"वाचा-रोध"</strong> और भरहरापन को <strong style="color:#C45A10;">"कंप-वात"</strong> कहा गया है। दोनों की जड़ एक ही है — <strong>बिगड़ा हुआ Vata दोष।</strong> जब Vata असंतुलित होता है, तो नाड़ियाँ कमज़ोर पड़ती हैं, वाणी अवरुद्ध होती है और पूरे शरीर में कंपन उत्पन्न होता है।</p>
+      </div>
+     </div> -->
+
+      <!-- 3 Pillars -->
+      <div style="margin-bottom:4px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+          <div style="height:1px;flex:1;background:linear-gradient(to right,transparent,#E8D5B8);"></div>
+          <span style="color:#7B4F2E;font-size:12px;font-weight:700;">🏛️ आयुर्वेदिक दृष्टिकोण — 3 स्तंभ</span>
+          <div style="height:1px;flex:1;background:linear-gradient(to left,transparent,#E8D5B8);"></div>
+        </div>
+
+        <!-- Pillar 1 -->
+        <div class="pillar-card fadein-up" id="pc1" style="transition-delay:.15s;">
+          <div class="pillar-stripe" style="background:linear-gradient(to bottom,#F5C842,#E8742A);"></div>
+          <div style="padding-left:10px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+              <div
+                style="width:78px;height:78px;background:linear-gradient(135deg,#FDE98A,#F5C842);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">
+             <img src="https://cdn-icons-png.flaticon.com/512/6077/6077170.png" alt=""> 
+                </div>
+              <div>
+                <div style="font-weight:700;color:#2C1A0E;font-size:14px;">Gentle Herbs — कोमल उपचार</div>
+                <div style="color:#A07850;font-size:10px;font-weight:600;">✔ प्रमाणित आयुर्वेदिक सिद्धांत</div>
+              </div>
+            </div>
+            <p style="color:#4A2E14;font-size:12px;line-height:1.7;margin:0;">अश्वगंधा, ब्राह्मी, यष्टिमधु जैसी सौम्य
+              जड़ी-बूटियाँ शरीर को <strong>धीरे-धीरे और गहराई से</strong> ठीक करती हैं। यह शरीर की अपनी <strong
+                style="color:#C45A10;">healing power को जगाती हैं</strong> — कोई अतिरिक्त बोझ नहीं।</p>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="pillar-card fadein-up" id="pc2" style="transition-delay:.25s;">
+          <div class="pillar-stripe" style="background:linear-gradient(to bottom,#3D7A48,#6CAE7A);"></div>
+          <div style="padding-left:10px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+              <div
+                style="width:78px;height:78px;background:linear-gradient(135deg,#EAF4EC,#6CAE7A);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">
+                 <img src="https://cdn-icons-png.flaticon.com/512/17026/17026942.png" alt=""> </div>
+              <div>
+                <div style="font-weight:700;color:#2C1A0E;font-size:14px;">Long-Term Use — स्थायी परिणाम</div>
+                <div style="color:#A07850;font-size:10px;font-weight:600;">✔ जितना लंबा उपयोग, उतना गहरा असर</div>
+              </div>
+            </div>
+            <p style="color:#4A2E14;font-size:12px;line-height:1.7;margin:0;">आधुनिक दवाइयाँ सिर्फ लक्षण दबाती हैं।
+              आयुर्वेदिक उपचार को लंबे समय तक लेने पर भी <strong>कोई नुकसान नहीं</strong> — बल्कि 3 महीने नियमित लेने पर
+              परिणाम <strong style="color:#3D7A48;">स्थायी</strong> होते हैं।</p>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="pillar-card fadein-up" id="pc3" style="transition-delay:.35s;">
+          <div class="pillar-stripe" style="background:linear-gradient(to bottom,#C45A10,#F5A55A);"></div>
+          <div style="padding-left:10px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+              <div
+                style="width:78px;height:78px;background:linear-gradient(135deg,#F7EAD6,#E8742A44);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">
+                 <img src="https://cdn-icons-png.flaticon.com/512/9309/9309051.png" alt=""> </div>
+              <div>
+                <div style="font-weight:700;color:#2C1A0E;font-size:14px;">Natural Healing — प्रकृति के साथ</div>
+                <div style="color:#A07850;font-size:10px;font-weight:600;">✔ शरीर की अंदरूनी शक्ति को जगाता है</div>
+              </div>
+            </div>
+            <p style="color:#4A2E14;font-size:12px;line-height:1.7;margin:0;">Shravan Amrit शरीर के Vata संतुलन को
+              restore करता है — जिससे नाड़ियाँ खुद मज़बूत होती हैं, आवाज़ खुद वापस आती है और कंपन खुद शांत होता है।
+              <strong style="color:#C45A10;">प्रकृति के साथ — प्रकृति के द्वारा।</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="leaf-divider">🍃 ✦ 🍃</div>
+
+    <!-- ══════════════ SECTION 6 — COMPARISON ══════════════ -->
+    <section style="background:#F7EAD6;padding:28px 20px;">
+      <div style="text-align:center;margin-bottom:6px;">
+        <span
+          style="background:#2C1A0E;color:#FDE98A;font-size:13px;font-weight:700;padding:4px 12px;border-radius:20px;">📊
+          तुलना करें</span>
+      </div>
+      <h2 style="text-align:center;font-size:26px;font-weight:700;color:#2C1A0E;margin:10px 0 18px;">Shravan Amrit vs
+        बाकी विकल्प</h2>
+
+      <div style="border-radius:16px;overflow:hidden;border:2px solid #E8D5B8;">
+        <!-- Header -->
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:#2C1A0E;">
+          <div style="padding:12px 10px;color:#FDE98A;font-size:14px;font-weight:700;">विशेषता</div>
+          <div
+            style="padding:12px 10px;text-align:center;color:#F5C842;font-size:14px;font-weight:700;border-left:1px solid #4A2E14;">
+            Shravan Amrit 🌿</div>
+          <div
+            style="padding:12px 10px;text-align:center;color:#ccc;font-size:14px;font-weight:700;border-left:1px solid #4A2E14;">
+            अन्य दवाइयाँ</div>
+        </div>
+
+        <!-- Rows -->
+        <div class="comp-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;">
+          <div style="padding:11px 10px;color:#4A2E14;font-size:14px;font-weight:500;">गूंगापन पर असर</div>
+          <div
+            style="padding:11px;text-align:center;color:#3D7A48;font-size:18px;font-weight:700;border-left:1px solid #E8D5B8;">
+            ✓</div>
+          <div
+            style="padding:11px;text-align:center;color:#C0392B;font-size:18px;font-weight:700;border-left:1px solid #E8D5B8;">
+            ✗</div>
+        </div>
+        <div class="comp-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;background:#FDF6EC;">
+          <div style="padding:11px 10px;color:#4A2E14;font-size:14px;font-weight:500;">भरहरापन पर असर</div>
+          <div
+            style="padding:11px;text-align:center;color:#3D7A48;font-size:18px;font-weight:700;border-left:1px solid #E8D5B8;">
+            ✓</div>
+          <div
+            style="padding:11px;text-align:center;color:#C0392B;font-size:18px;font-weight:700;border-left:1px solid #E8D5B8;">
+            ✗</div>
+        </div>
+        <div class="comp-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;">
+          <div style="padding:11px 10px;color:#4A2E14;font-size:14px;font-weight:500;">100% प्राकृतिक</div>
+          <div
+            style="padding:11px;text-align:center;color:#3D7A48;font-size:18px;font-weight:700;border-left:1px solid #E8D5B8;">
+            ✓</div>
+          <div
+            style="padding:11px;text-align:center;color:#C0392B;font-size:18px;font-weight:700;border-left:1px solid #E8D5B8;">
+            ✗</div>
+        </div>
+        <div class="comp-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;background:#FDF6EC;">
+          <div style="padding:11px 10px;color:#4A2E14;font-size:14px;font-weight:500;">Side Effect नहीं</div>
+          <div
+            style="padding:11px;text-align:center;color:#3D7A48;font-size:18px;font-weight:700;border-left:1px solid #E8D5B8;">
+            ✓</div>
+          <div
+            style="padding:11px;text-align:center;color:#C0392B;font-size:18px;font-weight:700;border-left:1px solid #E8D5B8;">
+            ✗</div>
+        </div>
+        <div class="comp-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;">
+          <div style="padding:11px 10px;color:#4A2E14;font-size:14px;font-weight:500;">जड़ से इलाज</div>
+          <div
+            style="padding:11px;text-align:center;color:#3D7A48;font-size:18px;font-weight:700;border-left:1px solid #E8D5B8;">
+            ✓</div>
+          <div
+            style="padding:11px;text-align:center;color:#C0392B;font-size:18px;font-weight:700;border-left:1px solid #E8D5B8;">
+            ✗</div>
+        </div>
+        <div class="comp-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;background:#FDF6EC;">
+          <div style="padding:11px 10px;color:#4A2E14;font-size:14px;font-weight:500;">AYUSH प्रमाणित</div>
+          <div
+            style="padding:11px;text-align:center;color:#3D7A48;font-size:18px;font-weight:700;border-left:1px solid #E8D5B8;">
+            ✓</div>
+          <div
+            style="padding:11px;text-align:center;color:#C0392B;font-size:18px;font-weight:700;border-left:1px solid #E8D5B8;">
+            ✗</div>
+        </div>
+        <div class="comp-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;background:#FDF6EC;">
+          <div style="padding:11px 10px;color:#4A2E14;font-size:14px;font-weight:500;">किफायती कीमत</div>
+          <div
+            style="padding:11px;text-align:center;color:#3D7A48;font-size:18px;font-weight:700;border-left:1px solid #E8D5B8;">
+            ✓</div>
+          <div
+            style="padding:11px;text-align:center;color:#C0392B;font-size:18px;font-weight:700;border-left:1px solid #E8D5B8;">
+            ✗</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="leaf-divider">🍃 ✦ 🍃</div>
+
+    <!-- ══════════════ SECTION 7 — INGREDIENTS ══════════════ -->
+    <section style="padding:28px 20px;background:#FDF6EC;">
+      <div style="text-align:center;margin-bottom:6px;">
+        <span
+          style="background:#EAF4EC;color:#3D7A48;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:1px solid #6CAE7A;">🌿
+          मुख्य सामग्री</span>
+      </div>
+      <h2 style="text-align:center;font-size:21px;font-weight:700;color:#2C1A0E;margin:10px 0 6px;">शक्तिशाली आयुर्वेदिक
+        सामग्री</h2>
+      <p style="text-align:center;color:#A07850;font-size:13px;margin-bottom:20px;">प्रकृति के 6 सबसे शक्तिशाली तत्व —
+        एक फॉर्मूले में</p>
+
+
+      <!-- Ingredient cards -->
+      <div style="display:flex;flex-direction:column;gap:10px;">
+
+        <div class="ingr-card"
+          style="background:#FFFDF8;border-radius:14px;padding:14px;border:1px solid #E8D5B8;display:flex;gap:14px;align-items:flex-start;">
+          <div
+            style="min-width:7.5rem;height:7.5rem;background:linear-gradient(135deg,#F7EAD6,#FDE98A);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;">
+            <img src="./Image/Ind1.png" style="width: 100%; border-radius: 50%; height: 100%;" alt="">
+          </div>
+          <div>
+            <div style="font-weight:700;color:#2C1A0E;font-size:18px;">अश्वगंधा</div>
+            <div style="color:#A07850;font-size:15px;margin-bottom:4px;font-style:italic;">Withania Somnifera</div>
+            <p style="color:#4A2E14;font-size:16px;line-height:1.55;">भरहरापन की कंपकंपी को कम करता है। नसों को ताकत
+              देता है और Vata दोष को संतुलित करता है।</p>
+          </div>
+        </div>
+
+        <div class="ingr-card"
+          style="background:#FFFDF8;border-radius:14px;padding:14px;border:1px solid #E8D5B8;display:flex;gap:14px;align-items:flex-start;">
+          <div
+            style="min-width:7.5rem;height:7.5rem;background:linear-gradient(135deg,#FDE98A,#F5C842);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;">
+            <img src="./Image/Ind2.png" style="width: 100%; border-radius: 50%; height: 100%;" alt="">
+          </div>
+          <div>
+            <div style="font-weight:700;color:#2C1A0E;font-size:18px;">मुलेठी</div>
+            <div style="color:#A07850;font-size:15px;margin-bottom:4px;font-style:italic;">Mulethi / Licorice</div>
+            <p style="color:#4A2E14;font-size:16px;line-height:1.55;">आवाज़ की नली की सूजन कम करता है। गूंगापन में आवाज़
+              वापस लाने की प्रमुख जड़ी-बूटी।</p>
+          </div>
+        </div>
+
+        <div class="ingr-card"
+          style="background:#FFFDF8;border-radius:14px;padding:14px;border:1px solid #E8D5B8;display:flex;gap:14px;align-items:flex-start;">
+          <div
+            style="min-width:7.5rem;height:7.5rem;background:linear-gradient(135deg,#EAF4EC,#6CAE7A40);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;">
+            <img src="./Image/Ind3.png" style="width: 100%; border-radius: 50%; height: 100%;" alt="">
+          </div>
+          <div>
+            <div style="font-weight:700;color:#2C1A0E;font-size:18px;">ब्राह्मी</div>
+            <div style="color:#A07850;font-size:15px;margin-bottom:4px;font-style:italic;">Bacopa Monnieri</div>
+            <p style="color:#4A2E14;font-size:16px;line-height:1.55;">मस्तिष्क और वाणी केंद्र को मज़बूत करता है। स्मृति,
+              एकाग्रता और बोलने की शक्ति बढ़ाता है।</p>
+          </div>
+        </div>
+
+        <div class="ingr-card"
+          style="background:#FFFDF8;border-radius:14px;padding:14px;border:1px solid #E8D5B8;display:flex;gap:14px;align-items:flex-start;">
+          <div
+            style="min-width:7.5rem;height:7.5rem;background:linear-gradient(135deg,#F7EAD6,#FDE98A);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;">
+            <img src="./Image/Ind4.png" style="width: 100%; border-radius: 50%; height: 100%;" alt="">
+          </div>
+          <div>
+            <div style="font-weight:700;color:#2C1A0E;font-size:18px;">शतावरी</div>
+            <div style="color:#A07850;font-size:15px;margin-bottom:4px;font-style:italic;">Asparagus Racemosus</div>
+            <p style="color:#4A2E14;font-size:16px;line-height:1.55;">शरीर में ऊर्जा और ओज बढ़ाता है। भरहरापन की कमज़ोरी
+              को दूर करता है।</p>
+          </div>
+        </div>
+
+        <!-- <div class="ingr-card"
+          style="background:#FFFDF8;border-radius:14px;padding:14px;border:1px solid #E8D5B8;display:flex;gap:14px;align-items:flex-start;">
+          <div
+            style="min-width:44px;height:44px;background:linear-gradient(135deg,#F7EAD6,#E8D5B8);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;">
+            🫙</div>
+          <div>
+            <div style="font-weight:700;color:#2C1A0E;font-size:14px;">तिल तेल सत्व</div>
+            <div style="color:#A07850;font-size:11px;margin-bottom:4px;font-style:italic;">Sesame Extract</div>
+            <p style="color:#4A2E14;font-size:12px;line-height:1.55;">नाड़ी पोषण के लिए उत्तम। नसों की झिल्लियों को
+              मज़बूत करता है और कंपन रोकता है।</p>
+          </div>
+        </div> -->
+
+        <div class="ingr-card"
+          style="background:#FFFDF8;border-radius:14px;padding:14px;border:1px solid #E8D5B8;display:flex;gap:14px;align-items:flex-start;">
+          <div
+            style="min-width:7.5rem;height:7.5rem;background:linear-gradient(135deg,#F7EAD6,#FDE98A);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;">
+            <img src="./Image/Ind5.png" style="width: 100%; border-radius: 50%; height: 100%;" alt="">
+          </div>
+          <div>
+            <div style="font-weight:700;color:#2C1A0E;font-size:18px;">काली मिर्च</div>
+            <div style="color:#A07850;font-size:15px;margin-bottom:4px;font-style:italic;">Piper Nigrum</div>
+            <p style="color:#4A2E14;font-size:16px;line-height:1.55;">सभी जड़ी-बूटियों के अवशोषण को 20 गुना बढ़ाता है।
+              Bioenhancer का काम करता है।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="leaf-divider">🍃 ✦ 🍃</div>
+
+    <!-- ══════════════ SECTION 8 — HOW TO USE ══════════════ -->
+    <style>
+      .use-section-bg {
+        background: linear-gradient(160deg, #2C1A0E 0%, #4A2E14 60%, #7B4F2E 100%);
+        padding: 32px 20px 28px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .use-section-bg::before {
+        content: '';
+        position: absolute;
+        top: -60px;
+        right: -60px;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, #F5C84228, transparent 70%);
+        border-radius: 50%;
+      }
+
+      .use-section-bg::after {
+        content: '';
+        position: absolute;
+        bottom: -40px;
+        left: -40px;
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(circle, #E8742A18, transparent 70%);
+        border-radius: 50%;
+      }
+
+      .leaf-float {
+        position: absolute;
+        font-size: 16px;
+        opacity: .15;
+        animation: floatUp linear infinite;
+        pointer-events: none;
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0;
+        }
+
+        10% {
+          opacity: .2;
+        }
+
+        90% {
+          opacity: .12;
+        }
+
+        100% {
+          transform: translateY(-340px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      .use-step {
+        display: flex;
+        gap: 0;
+        margin-bottom: 14px;
+        opacity: 0;
+        transform: translateX(-28px);
+        transition: opacity .55s ease, transform .55s ease;
+      }
+
+      .use-step.vis {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .sic {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+        width: 56px;
+      }
+
+      .sir {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        position: relative;
+        flex-shrink: 0;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
+      }
+
+      .sir::after {
+        content: '';
+        position: absolute;
+        inset: -3px;
+        border-radius: 50%;
+        border: 2px dashed rgba(245, 200, 66, .45);
+        animation: spinR 6s linear infinite;
+      }
+
+      @keyframes spinR {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .svl {
+        width: 2px;
+        flex: 1;
+        min-height: 18px;
+        margin-top: 4px;
+        background: linear-gradient(to bottom, #F5C842, transparent);
+        opacity: .4;
+      }
+
+      .scc {
+        flex: 1;
+        background: rgba(255, 255, 255, .07);
+        border: 1px solid rgba(245, 200, 66, .18);
+        border-radius: 16px;
+        padding: 14px 16px;
+        margin-left: 12px;
+        position: relative;
+        overflow: hidden;
+        transition: background .3s;
+      }
+
+      .scc:active {
+        background: rgba(255, 255, 255, .13);
+      }
+
+      .scc::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        border-radius: 16px 16px 0 0;
+      }
+
+      .scc::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -60%;
+        width: 40%;
+        height: 200%;
+        background: linear-gradient(105deg, transparent, rgba(255, 255, 255, .05), transparent);
+        animation: shim 4s ease infinite;
+      }
+
+      @keyframes shim {
+        0% {
+          left: -60%;
+        }
+
+        100% {
+          left: 130%;
+        }
+      }
+
+      .stag {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 10px;
+        margin-bottom: 5px;
+        letter-spacing: .4px;
+      }
+
+      .avoid-g {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .avoid-i {
+        background: rgba(192, 57, 43, .15);
+        border: 1px solid rgba(192, 57, 43, .3);
+        border-radius: 10px;
+        padding: 8px 10px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 14px;
+        color: white;
+        font-weight: 500;
+      }
+
+      .pdot {
+        width: 8px;
+        height: 8px;
+        background: #F5C842;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 6px;
+        animation: pdotA 1.4s ease infinite;
+      }
+
+      @keyframes pdotA {
+
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(245, 200, 66, .6);
+        }
+
+        50% {
+          box-shadow: 0 0 0 6px rgba(245, 200, 66, 0);
+        }
+      }
+    </style>
+
+    <section class="use-section-bg">
+      <span class="leaf-float" style="left:8%;animation-duration:7s;animation-delay:0s;">🌿</span>
+      <span class="leaf-float" style="left:30%;animation-duration:9s;animation-delay:2s;">🍃</span>
+      <span class="leaf-float" style="left:62%;animation-duration:8s;animation-delay:4s;">🌱</span>
+      <span class="leaf-float" style="left:82%;animation-duration:6s;animation-delay:1s;">🌿</span>
+
+      <div style="text-align:center;margin-bottom:6px;position:relative;z-index:1;">
+        <span
+          style="background:rgba(245,200,66,.18);color:#F5C842;font-size:16px;font-weight:700;padding:5px 14px;border-radius:20px;border:1px solid rgba(245,200,66,.3);">📋
+          उपयोग विधि</span>
+      </div>
+      <h2
+        style="text-align:center;font-size:24px;font-weight:700;color:#FFFDF8;margin:10px 0 4px;position:relative;z-index:1;">
+        Shravan Amrit कैसे लें?</h2>
+      <p
+        style="text-align:center;font-size:16px;color:rgba(256,256,256,.9);margin-bottom:24px;position:relative;z-index:1;">
+        सही तरीके से लें — <span style="color:#F5C842;font-weight:600;">सबसे तेज़ असर पाएँ</span></p>
+
+      <!-- Step 1 -->
+      <div class="use-step" id="su1" style="transition-delay:.0s;">
+        <div class="sic">
+          <div class="sir" style="background:linear-gradient(135deg,#F5C842,#E8742A);">☀️</div>
+          <div class="svl"></div>
+        </div>
+        <div class="scc" style="border-top:2px solid #F5C842;">
+          <span class="stag"
+            style="background:rgba(245,200,66,.18);color:#F5C842;border:1px solid rgba(245,200,66,.3);">⏰ सुबह 6–8
+            बजे</span>
+          <div style="font-weight:700;color:#FFFDF8;font-size:18px;margin-bottom:5px;">खाली पेट — पहली खुराक</div>
+          <p style="color:white;font-size:14px;line-height:1.7;margin:0 0 10px;">सुबह उठते ही <strong
+              style="color:#F5C842;">1 चम्मच</strong> Shravan Amrit Churna <strong style="color:#F5C842;">गर्म
+              दूध</strong> या गर्म पानी के साथ लें।</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span
+              style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:4px 10px;font-size:12px;color:#F7EAD6;">🥛
+              गर्म दूध</span>
+            <span
+              style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:4px 10px;font-size:12px;color:#F7EAD6;">💧
+              गर्म पानी</span>
+            <span
+              style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:4px 10px;font-size:12px;color:#F7EAD6;">🥄
+              1 चम्मच</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="use-step" id="su2" style="transition-delay:.15s;">
+        <div class="sic">
+          <div class="sir" style="background:linear-gradient(135deg,#1a0a3e,#3d2080);">🌙</div>
+          <div class="svl"></div>
+        </div>
+        <div class="scc" style="border-top:2px solid #9b6dff;">
+          <span class="stag"
+            style="background:rgba(130,80,200,.18);color:#c9a8ff;border:1px solid rgba(130,80,200,.3);">🌛 रात सोने से
+            पहले</span>
+          <div style="font-weight:700;color:#FFFDF8;font-size:18px;margin-bottom:5px;">रात की खुराक — गहरी नींद</div>
+          <p style="color:white;font-size:14px;line-height:1.7;margin:0 0 10px;">सोने से <strong
+              style="color:#c9a8ff;">30 मिनट पहले</strong> 1 चम्मच गर्म दूध के साथ लें।</p>
+          <div
+            style="background:rgba(130,80,200,.12);border-radius:10px;padding:8px 12px;display:flex;align-items:center;gap:8px;">
+            <span style="font-size:16px;">😴</span>
+            <span style="color:#c9a8ff;font-size:14px;font-weight:600;">Bonus: नींद भी गहरी और बेहतर आएगी!</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="use-step" id="su3" style="transition-delay:.3s;">
+        <div class="sic">
+          <div class="sir" style="background:linear-gradient(135deg,#3D7A48,#6CAE7A);">📅</div>
+          <div class="svl"></div>
+        </div>
+        <div class="scc" style="border-top:2px solid #6CAE7A;">
+          <span class="stag" style="background:rgba(61,122,72,.2);color:#6CAE7A;border:1px solid rgba(61,122,72,.3);">✅
+            नियमित उपयोग</span>
+          <div style="font-weight:700;color:#FFFDF8;font-size:18px;margin-bottom:5px;">7 दिन लगातार — बिना नागा</div>
+          <p style="color:white;font-size:14px;line-height:1.65;margin:0 0 10px;">पहले असर <strong
+              style="color:#6CAE7A;">7-10 दिन</strong> में ही दिखना शुरू होगा।</p>
+          <div
+            style="background:rgba(255,255,255,.07);border-radius:20px;height:8px;overflow:hidden;margin-bottom:6px;">
+            <div id="pbar"
+              style="height:100%;width:0%;background:linear-gradient(90deg,#3D7A48,#6CAE7A,#F5C842);border-radius:20px;transition:width 2s ease .4s;">
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;color:rgba(247,234,214,.45);">
+            <span>दिन 1</span><span style="color:#6CAE7A;font-weight:700;">दिन 7 ✓ असर</span><span>दिन 21+</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="use-step" id="su4" style="transition-delay:.45s;">
+        <div class="sic">
+          <div class="sir" style="background:linear-gradient(135deg,#C0392B,#E74C3C);">🚫</div>
+        </div>
+        <div class="scc" style="border-top:2px solid #E74C3C;">
+          <span class="stag"
+            style="background:rgba(192,57,43,.18);color:#F5A8A0;border:1px solid rgba(192,57,43,.3);">⚠️ परहेज़
+            ज़रूरी</span>
+          <div style="font-weight:700;color:#FFFDF8;font-size:18px;margin-bottom:8px;">इन चीज़ों से बचें</div>
+          <div class="avoid-g">
+            <div class="avoid-i">❄️ ठंडा पानी</div>
+            <div class="avoid-i">🍦 ठंडी चीज़ें</div>
+            <div class="avoid-i">🍟 तला-भुना</div>
+            <div class="avoid-i">💨 Vata वर्धक</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live badge -->
+      <div style="margin-top:16px;display:flex;justify-content:center;position:relative;z-index:1;">
+        <div
+          style="background:rgba(255,255,255,.07);border:1px solid rgba(245,200,66,.2);border-radius:20px;padding:8px 16px;display:flex;align-items:center;gap:8px;">
+          <span class="pdot"></span>
+          <span style="color:rgba(247,234,214,.7);font-size:14px;"><strong style="color:#F5C842;">127 लोग</strong> अभी
+            यह उत्पाद देख रहे हैं</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="leaf-divider">🍃 ✦ 🍃</div>
+
+    <!-- ══════════════ SECTION 9 — CERTIFICATIONS ══════════════ -->
+    <section style="padding:28px 20px;background:#FDF6EC;">
+      <h2 style="text-align:center;font-size:21px;font-weight:700;color:#2C1A0E;margin-bottom:18px;">100% प्रमाणित और
+        विश्वसनीय</h2>
+
+      <!-- Certs -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;">
+        <div style="background:#EAF4EC;border:1px solid #6CAE7A;border-radius:12px;padding:14px;text-align:center;">
+          <!-- <div style="font-size:24px;margin-bottom:4px;">🏛️</div> -->
+          <img src="./Image/Logo1.png" class=" mb-5 " alt="">
+          <div style="font-weight:700;color:#3D7A48;font-size:12px;">AYUSH मंत्रालय</div>
+          <div style="color:#A07850;font-size:10px;">प्रमाणित</div>
+        </div>
+        <div style="background:#EAF4EC;border:1px solid #6CAE7A;border-radius:12px;padding:14px;text-align:center;">
+          <img src="./Image/Logo2.png" class=" mb-5 " alt="">
+          <div style="font-weight:700;color:#3D7A48;font-size:12px;">GMP Certified</div>
+          <div style="color:#A07850;font-size:10px;">Lab Certified</div>
+        </div>
+        <div style="background:#EAF4EC;border:1px solid #6CAE7A;border-radius:12px;padding:14px;text-align:center;">
+          <!-- <div style="font-size:24px;margin-bottom:4px;">🌿</div> -->
+          <img src="./Image/Logo3.png" class=" mb-5 " alt="">
+          <div style="font-weight:700;color:#3D7A48;font-size:12px;">ISO 9001</div>
+          <div style="color:#A07850;font-size:10px;">Quality Standard</div>
+        </div>
+        <div style="background:#EAF4EC;border:1px solid #6CAE7A;border-radius:12px;padding:14px;text-align:center;">
+          <!-- <div style="font-size:24px;margin-bottom:4px;">✅</div> -->
+          <img src="./Image/Logo4.png" class=" mb-5 " alt="">
+          <div style="font-weight:700;color:#3D7A48;font-size:12px;">FSSAI Certified</div>
+          <div style="color:#A07850;font-size:10px;">Food Safe</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="leaf-divider">🍃 ✦ 🍃</div>
+
+    <!-- ══════════════ SECTION 11 — OFFER ══════════════ -->
+    <section style="padding:28px 20px;background:#FDF6EC;">
+      <!-- Urgency banner -->
+      <div
+        style="background:linear-gradient(135deg,#C0392B,#E74C3C);border-radius:12px;padding:12px;text-align:center;margin-bottom:18px;">
+        <div style="color:#fff;font-size:16px;font-weight:700;">⏰ सीमित समय की ऑफर </div>
+        <div style="color:#FDE98A;font-size:14px;margin-top:4px;">यह offer कभी भी बंद हो सकती है</div>
+      </div>
+
+      <!-- Countdown -->
+      <div style="text-align:center;margin-bottom:18px;">
+        <p style="color:#A07850;font-size:1.5rem;margin-bottom:8px;font-weight:600;">⏱️ ऑफर बंद होने में बचा समय:</p>
+        <div style="display:flex;justify-content:center;gap:10px;align-items:center;">
+          <div>
+            <div class="countdown-box" id="cd-h">02</div>
+            <div style="color:#A07850;font-size:10px;text-align:center;margin-top:3px;">घंटे</div>
+          </div>
+          <div style="font-size:22px;font-weight:700;color:#C45A10;margin-bottom:14px;">:</div>
+          <div>
+            <div class="countdown-box" id="cd-m">45</div>
+            <div style="color:#A07850;font-size:10px;text-align:center;margin-top:3px;">मिनट</div>
+          </div>
+          <div style="font-size:22px;font-weight:700;color:#C45A10;margin-bottom:14px;">:</div>
+          <div>
+            <div class="countdown-box" id="cd-s">30</div>
+            <div style="color:#A07850;font-size:10px;text-align:center;margin-top:3px;">सेकंड</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Price card -->
+      <div
+        style="background:linear-gradient(135deg,#2C1A0E,#4A2E14);border-radius:20px;padding:24px;margin-bottom:18px;position:relative;overflow:hidden;">
+        <div
+          style="position:absolute;top:-20px;right:-20px;width:100px;height:100px;background:#F5C84220;border-radius:50%;">
+        </div>
+        <div
+          style="position:absolute;top:10px;right:14px;background:linear-gradient(135deg,#F5C842,#E8742A);color:#fff;font-size:1.3rem;font-weight:700;padding:6px 14px;border-radius:20px;">
+          10% OFF</div>
+
+        <p style="color:#F7EAD6;font-size:13px;margin-bottom:6px;">Shravan Amrit (90 दिन की Supply)</p>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <span style="color:#F5C842;font-size:30px;font-weight:700;">विशेष छूट में</span>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;align-items:center;gap:8px;color:#F7EAD6;font-size:1.2rem;">
+            <span style="color:#6CAE7A;font-weight:700;">✓</span> Shravan Amrit (90 दिन की Supply)
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;color:#F7EAD6;font-size:1.2rem;">
+            <span style="color:#6CAE7A;font-weight:700;">✓</span> FREE — Diet Chart
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;color:#F7EAD6;font-size:1.2rem;">
+            <span style="color:#6CAE7A;font-weight:700;">✓</span> FREE — Yoga Guide PDF
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;color:#F7EAD6;font-size:1.2rem;">
+            <span style="color:#6CAE7A;font-weight:700;">✓</span> FREE Delivery — पूरे भारत में
+          </div>
+        </div>
+      </div>
+
+      <a onclick="scrollToOrderForm()">
+        <button class="cta-pulse"
+          style="width:100%;background:linear-gradient(135deg,#C45A10,#E8742A);color:#fff;border:none;border-radius:14px;padding:18px;font-size:18px;font-weight:700;cursor:pointer;margin-bottom:10px;">
+          🛒 अभी ऑर्डर करें
+        </button>
+      </a>
+      <p style="text-align:center;color:#A07850;font-size:12px;"> COD Available | Free Shipping
+      </p>
+    </section>
+
+    <div class="leaf-divider">🍃 ✦ 🍃</div>
+
+    <!-- ══════════════ SECTION 12 — ORDER FORM ══════════════ -->
+    <html>
+
+    <head>
+      <style>
+        /* Dot animation styles */
+        #loading {
+          display: none;
+          color: white;
+          margin-top: 10px;
+          font-weight: bold;
+          text-align: center;
+        }
+      </style>
+      <script>
+
+        function submitForm(event) {
+          event.preventDefault();
+          const submitBtn = document.getElementById('submitBtn');
+          const loading = document.getElementById('loading');
+
+          submitBtn.style.display = 'none';
+          loading.style.display = 'block';
+
+          const formData = new FormData(event.target);
+          let redirected = false;
+
+          const timeout = setTimeout(() => {
+            if (!redirected) {
+              redirected = true;
+              window.location.href = './ThankYou.html';
+            }
+          }, 2000);
+
+          fetch('https://script.google.com/macros/s/AKfycbyfHyY2-5KgISO7R5Y56mDlm43OszzFK0g3eogl3OcLvze-C8g6yBRlfoJ9rPguXfOx/exec', {
+            method: 'POST',
+            body: formData
+          }).then(response => response.text())
+            .then(data => {
+              if (!redirected) {
+                clearTimeout(timeout);
+                redirected = true;
+                window.location.href = './ThankYou.html';
+              }
+            }).catch(error => {
+              console.error("Error:", error);
+              if (!redirected) {
+                clearTimeout(timeout);
+                redirected = true;
+                window.location.href = './ThankYou.html';
+              }
+            });
+
+          return false;
+        }
+
+        // Dot animation
+        let dotCount = 1;
+        setInterval(() => {
+          const dotAnim = document.getElementById('dotAnim');
+          if (dotAnim) {
+            dotCount = (dotCount % 3) + 1;
+            dotAnim.textContent = '.'.repeat(dotCount);
+          }
+        }, 500);
+
+      </script>
+    </head>
+
+    <body>
+      <section id="order-form" style="background:#F7EAD6;padding:28px 20px;">
+        <div style="text-align:center;margin-bottom:6px;">
+          <span
+            style="background:#3D7A48;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">📦
+            ऑर्डर फॉर्म</span>
+        </div>
+        <h2 style="text-align:center;font-size:21px;font-weight:700;color:#2C1A0E;margin:10px 0 6px;">अभी ऑर्डर करें
+        </h2>
+        <p style="text-align:center;color:#A07850;font-size:13px;margin-bottom:20px;">घर पर डिलीवरी पाएँ — जल्दी ऑर्डर
+          करें</p>
+
+        <div style="background:#FFFDF8;border-radius:20px;padding:20px;border:1px solid #E8D5B8;">
+          <form onsubmit="return submitForm(event)">
+            <!-- Name -->
+            <div style="margin-bottom:14px;">
+              <label style="display:block;color:#4A2E14;font-size:13px;font-weight:600;margin-bottom:6px;">👤 पूरा नाम
+                *</label>
+              <input type="text" placeholder="अपना पूरा नाम लिखें"
+                style="width:100%;border:1.5px solid #E8D5B8;border-radius:10px;padding:12px 14px;font-size:14px;font-family:'Hind',sans-serif;background:#FDF6EC;color:#2C1A0E;outline:none;"
+                onfocus="this.style.borderColor='#C45A10'" onblur="this.style.borderColor='#E8D5B8'">
+            </div>
+
+            <!-- Phone -->
+            <div style="margin-bottom:14px;">
+              <label style="display:block;color:#4A2E14;font-size:13px;font-weight:600;margin-bottom:6px;">📱 मोबाइल
+                नंबर
+                *</label>
+              <input type="tel" placeholder="10 अंकों का मोबाइल नंबर" maxlength="10"
+                style="width:100%;border:1.5px solid #E8D5B8;border-radius:10px;padding:12px 14px;font-size:14px;font-family:'Hind',sans-serif;background:#FDF6EC;color:#2C1A0E;outline:none;"
+                onfocus="this.style.borderColor='#C45A10'" onblur="this.style.borderColor='#E8D5B8'">
+            </div>
+
+            <!-- Submit -->
+            <input type="submit" id="submitBtn" class="cta-pulse" value="✅ ऑर्डर कन्फर्म करें"
+              style="width:100%;background:linear-gradient(135deg,#3D7A48,#6CAE7A);color:#fff;border:none;border-radius:14px;padding:16px;font-size:17px;font-weight:700;cursor:pointer;">
+
+            <div id="loading"
+              style="width:100%;background:linear-gradient(135deg,#3D7A48,#6CAE7A);color:#fff;border:none;border-radius:14px;padding:16px;font-size:17px;font-weight:700;cursor:pointer;">
+              Processing<span id="dotAnim"></span></div>
+
+          </form>
+          <p style="text-align:center;color:#A07850;font-size:11px;margin-top:10px;">🔒 100% सुरक्षित | आपकी जानकारी
+            गोपनीय रहेगी</p>
+        </div>
+        </form>
+      </section>
+    </body>
+
+    </html>
+
+    <div class="leaf-divider">🍃 ✦ 🍃</div>
+
+    <!-- ══════════════ SECTION 10 — REVIEWS ══════════════ -->
+    <section style="background:#F7EAD6;padding:28px 20px;">
+      <div style="text-align:center;margin-bottom:6px;">
+        <span
+          style="background:#C45A10;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">❤️
+          असली अनुभव</span>
+      </div>
+      <h2 style="text-align:center;font-size:21px;font-weight:700;color:#2C1A0E;margin:10px 0 18px;">इन्होंने ज़िंदगी
+        वापस पाई</h2>
+
+      <!-- Review 1 -->
+      <div
+        style="background:#FFFDF8;border-radius:16px;padding:18px;margin-bottom:12px;border:1px solid #E8D5B8;position:relative;overflow:hidden;">
+        <div
+          style="position:absolute;top:0;right:0;background:linear-gradient(135deg,#FDE98A,#F5C842);width:60px;height:60px;border-radius:0 16px 0 60px;display:flex;align-items:flex-start;justify-content:flex-end;padding:8px;font-size:20px;">
+          🌿</div>
+        <div class="stars" style="margin-bottom:8px;">★★★★★</div>
+        <p style="color:#4A2E14;font-size:13px;line-height:1.7;margin-bottom:10px;font-style:italic;">"3 साल से गूंगापन
+          और भरहरापन की वजह से मैं ठीक से बोल नहीं पाता था। 7 दिन Shravan Amrit लेने के बाद मेरी आवाज़ वापस आई। "</p>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div
+            style="width:76px;height:76px;background:linear-gradient(135deg,#F5C842,#C45A10);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;">
+            <img src="./Image/Client1.jpeg" alt="Client 1" style="width:100%;height:100%;border-radius:50%;">
+          </div>
+          <div>
+            <div style="font-weight:700;color:#2C1A0E;font-size:13px;">रामकिशन यादव</div>
+            <div style="color:#A07850;font-size:11px;">📍 प्रयागराज, UP • ✅ सत्यापित खरीदार</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div
+        style="background:#FFFDF8;border-radius:16px;padding:18px;margin-bottom:12px;border:1px solid #E8D5B8;position:relative;overflow:hidden;">
+        <div
+          style="position:absolute;top:0;right:0;background:linear-gradient(135deg,#EAF4EC,#6CAE7A);width:60px;height:60px;border-radius:0 16px 0 60px;display:flex;align-items:flex-start;justify-content:flex-end;padding:8px;font-size:20px;">
+          💚</div>
+        <div class="stars" style="margin-bottom:8px;">★★★★★</div>
+        <p style="color:#4A2E14;font-size:13px;line-height:1.7;margin-bottom:10px;font-style:italic;">"गूंगापन और
+          भरहरापन की वजह से
+          हाथ इतने कांपते थे कि खाना भी नहीं खा पाती थी। 15 दिन में कंपकंपी आधी हो गई। 2 महीने में पूरी तरह ठीक हो गई।
+          सच में चमत्कार है।"</p>
+
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div
+            style="width:76px;height:76px;background:linear-gradient(135deg,#F5C842,#C45A10);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;">
+            <img src="./Image/Client2.jpeg" alt="Client 2" style="width:100%;height:100%;border-radius:50%;">
+          </div>
+          <div>
+            <div style="font-weight:700;color:#2C1A0E;font-size:13px;">सुमन देवी</div>
+            <div style="color:#A07850;font-size:11px;">📍 जयपुर, राजस्थान • ✅ सत्यापित खरीदार</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div
+        style="background:#FFFDF8;border-radius:16px;padding:18px;border:1px solid #E8D5B8;position:relative;overflow:hidden;">
+        <div
+          style="position:absolute;top:0;right:0;background:linear-gradient(135deg,#FDE98A,#E8742A40);width:60px;height:60px;border-radius:0 16px 0 60px;display:flex;align-items:flex-start;justify-content:flex-end;padding:8px;font-size:20px;">
+          🙏</div>
+        <div class="stars" style="margin-bottom:8px;">★★★★★</div>
+        <p style="color:#4A2E14;font-size:13px;line-height:1.7;margin-bottom:10px;font-style:italic;">"दोनों तकलीफें एक
+          साथ थीं — गूंगापन और भरहरापन। डॉक्टर ने कहा था कि ठीक नहीं होगा। Shravan Amrit ने साबित कर दिया कि आयुर्वेद
+          में असली ताकत है।"</p>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div
+            style="width:76px;height:76px;background:linear-gradient(135deg,#F5C842,#C45A10);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;">
+            <img src="./Image/Client3.png" alt="Client 3" style="width:100%;height:100%;border-radius:50%;">
+          </div>
+          <div>
+            <div style="font-weight:700;color:#2C1A0E;font-size:13px;">मोहनलाल गुप्ता</div>
+            <div style="color:#A07850;font-size:11px;">📍 इंदौर, MP • ✅ सत्यापित खरीदार</div>
+          </div>
+        </div>
+      </div>
+      <!-- Trust stats -->
+      <div
+        style="background:linear-gradient(135deg,#2C1A0E,#4A2E14);border-radius:16px;padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:14px; margin-top: 20px;">
+        <div style="text-align:center;">
+          <div style="font-size:24px;font-weight:700;color:#F5C842;">100,000+</div>
+          <div style="color:#F7EAD6;font-size:16px;">संतुष्ट ग्राहक</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:24px;font-weight:700;color:#F5C842;">7 दिन</div>
+          <div style="color:#F7EAD6;font-size:16px;">में असर</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:24px;font-weight:700;color:#F5C842;">4.8 ⭐</div>
+          <div style="color:#F7EAD6;font-size:16px;">औसत रेटिंग</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:24px;font-weight:700;color:#F5C842;">30-45 दिन</div>
+          <div style="color:#F7EAD6;font-size:16px;">में असर</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="leaf-divider">🍃 ✦ 🍃</div>
+
+    <!-- ══════════════ SECTION 13 — FAQ ══════════════ -->
+    <section style="padding:28px 20px;background:#FDF6EC;padding-bottom:100px;">
+      <div style="text-align:center;margin-bottom:6px;">
+        <span
+          style="background:#F5C842;color:#7B4F2E;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">❓
+          FAQs</span>
+      </div>
+      <h2 style="text-align:center;font-size:21px;font-weight:700;color:#2C1A0E;margin:10px 0 18px;">अक्सर पूछे जाने
+        वाले सवाल</h2>
+
+      <div style="display:flex;flex-direction:column;gap:10px;">
+
+        <div class="faq-item" style="background:#FFFDF8;border-radius:14px;overflow:hidden;border:1px solid #E8D5B8;">
+          <div onclick="toggleFaq(this)"
+            style="padding:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-weight:600;color:#2C1A0E;font-size:14px;flex:1;padding-right:10px;">क्या Shravan Amrit
+              गूंगापन और भरहरापन दोनों पर काम करता है?</span>
+            <span class="faq-arrow" style="color:#C45A10;font-size:18px;font-weight:700;flex-shrink:0;">▾</span>
+          </div>
+          <div class="faq-answer"
+            style="padding:0 16px 16px;color:#4A2E14;font-size:13px;line-height:1.7;border-top:1px solid #E8D5B8;padding-top:14px;">
+            हाँ, Shravan Amrit विशेष रूप से इन दोनों समस्याओं के लिए बनाया गया है। यह Vata और Kapha दोनों दोषों को एक
+            साथ संतुलित करता है जो गूंगापन और भरहरापन की जड़ है।
+          </div>
+        </div>
+
+        <div class="faq-item" style="background:#FFFDF8;border-radius:14px;overflow:hidden;border:1px solid #E8D5B8;">
+          <div onclick="toggleFaq(this)"
+            style="padding:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-weight:600;color:#2C1A0E;font-size:14px;flex:1;padding-right:10px;">कितने दिनों में असर
+              दिखेगा?</span>
+            <span class="faq-arrow" style="color:#C45A10;font-size:18px;font-weight:700;flex-shrink:0;">▾</span>
+          </div>
+          <div class="faq-answer"
+            style="padding:0 16px 16px;color:#4A2E14;font-size:13px;line-height:1.7;border-top:1px solid #E8D5B8;padding-top:14px;">
+            अधिकांश ग्राहकों को 7-14 दिनों में पहला असर दिखता है। पूरी तरह ठीक होने में 21 से 90 दिन लग सकते हैं — यह
+            बीमारी की गहराई पर निर्भर करता है।
+          </div>
+        </div>
+
+        <div class="faq-item" style="background:#FFFDF8;border-radius:14px;overflow:hidden;border:1px solid #E8D5B8;">
+          <div onclick="toggleFaq(this)"
+            style="padding:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-weight:600;color:#2C1A0E;font-size:14px;flex:1;padding-right:10px;">क्या कोई Side Effect
+              है?</span>
+            <span class="faq-arrow" style="color:#C45A10;font-size:18px;font-weight:700;flex-shrink:0;">▾</span>
+          </div>
+          <div class="faq-answer"
+            style="padding:0 16px 16px;color:#4A2E14;font-size:13px;line-height:1.7;border-top:1px solid #E8D5B8;padding-top:14px;">
+            नहीं। Shravan Amrit 100% प्राकृतिक जड़ी-बूटियों से बनी है। कोई रसायन नहीं, कोई नशीला पदार्थ नहीं। AYUSH और
+            GMP Certified है। सामान्य लोगों के लिए पूरी तरह सुरक्षित है।
+          </div>
+        </div>
+
+        <div class="faq-item" style="background:#FFFDF8;border-radius:14px;overflow:hidden;border:1px solid #E8D5B8;">
+          <div onclick="toggleFaq(this)"
+            style="padding:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-weight:600;color:#2C1A0E;font-size:14px;flex:1;padding-right:10px;">क्या COD (Cash on
+              Delivery) उपलब्ध है?</span>
+            <span class="faq-arrow" style="color:#C45A10;font-size:18px;font-weight:700;flex-shrink:0;">▾</span>
+          </div>
+          <div class="faq-answer"
+            style="padding:0 16px 16px;color:#4A2E14;font-size:13px;line-height:1.7;border-top:1px solid #E8D5B8;padding-top:14px;">
+            हाँ! हम पूरे भारत में COD की सुविधा देते हैं। आप सामान मिलने के बाद पैसे दे सकते हैं। Online Payment पर
+            अतिरिक्त 5% छूट भी मिलती है।
+          </div>
+        </div>
+
+
+
+        <div class="faq-item" style="background:#FFFDF8;border-radius:14px;overflow:hidden;border:1px solid #E8D5B8;">
+          <div onclick="toggleFaq(this)"
+            style="padding:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-weight:600;color:#2C1A0E;font-size:14px;flex:1;padding-right:10px;">डिलीवरी कितने दिन
+              में आती है?</span>
+            <span class="faq-arrow" style="color:#C45A10;font-size:18px;font-weight:700;flex-shrink:0;">▾</span>
+          </div>
+          <div class="faq-answer"
+            style="padding:0 16px 16px;color:#4A2E14;font-size:13px;line-height:1.7;border-top:1px solid #E8D5B8;padding-top:14px;">
+            ऑर्डर के 24 घंटे के अंदर Dispatch होता है। आमतौर पर 3-7 कार्य दिवसों में डिलीवरी हो जाती है। डिलीवरी
+            बिल्कुल Free है।
+          </div>
+        </div>
+      </div>
+
+      <!-- Disclaimer -->
+      <div style="margin-top:24px;background:#F7EAD6;border-radius:12px;padding:14px;border:1px dashed #E8D5B8;">
+        <p style="color:#A07850;font-size:8px;font-weight:200;line-height:1.4;">
+          <strong>⚠️ Disclaimer :-</strong> This product is not intended to
+          diagnose, treat, cure, or prevent any disease. Results may vary from person to person. Always
+          consult with a qualified healthcare professional before starting any new supplement.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══════════════ STICKY CTA ══════════════ -->
+    <div class="sticky-cta" id="sticky-cta" style="opacity:0;pointer-events:none;">
+      <a onclick="scrollToOrderForm()">
+        <button
+          style="width:100%;background:linear-gradient(135deg,#C45A10,#E8742A);color:#fff;border:none;padding:16px;font-size:1.5rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">
+          🛒 अभी ऑर्डर करें
+          <span style="background:rgba(255,255,255,.25);padding:2px 10px;border-radius:20px;font-size:1.5rem;">10%
+            OFF</span>
+        </button>
+      </a>
+    </div>
+
+  </div><!-- end page-wrap -->
+
+  <!-- ══════════════ SCRIPTS ══════════════ -->
+  <script>
+    // ── Coupon overlay ──
+    function closeCoupon() {
+      document.getElementById('coupon-overlay').style.opacity = '0';
+      document.getElementById('coupon-overlay').style.pointerEvents = 'none';
+      setTimeout(() => document.getElementById('coupon-overlay').style.display = 'none', 400);
+    }
+    document.getElementById('coupon-overlay').style.transition = 'opacity .3s';
+
+    function copyCode() {
+      navigator.clipboard && navigator.clipboard.writeText('SHRAVAN10');
+      const el = document.getElementById('coupon-code');
+      const orig = el.innerHTML;
+      el.innerHTML = '✅ COPIED!';
+      el.style.background = 'linear-gradient(135deg,#3D7A48,#6CAE7A)';
+      setTimeout(() => { el.innerHTML = orig; el.style.background = ''; }, 2000);
+    }
+
+    scrollToOrderForm = () => {
+      document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    // ── FAQ toggle ──
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    }
+
+    // ── Countdown timer ──
+    let totalSecs = 2 * 3600 + 45 * 60 + 30;
+    function updateCD() {
+      if (totalSecs <= 0) return;
+      totalSecs--;
+      const h = Math.floor(totalSecs / 3600);
+      const m = Math.floor((totalSecs % 3600) / 60);
+      const s = totalSecs % 60;
+      document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+      document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+      document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+    }
+    setInterval(updateCD, 1000);
+
+    // ── Sticky CTA on scroll ──
+    window.addEventListener('scroll', () => {
+      const cta = document.getElementById('sticky-cta');
+      if (window.scrollY > 400) {
+        cta.style.opacity = '1';
+        cta.style.pointerEvents = 'auto';
+      } else {
+        cta.style.opacity = '0';
+        cta.style.pointerEvents = 'none';
+      }
+    });
+
+  </script>
+
+  <script>
+    (function () {
+      var steps = document.querySelectorAll('.use-step');
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('vis');
+            if (e.target.id === 'su3') {
+              setTimeout(function () { var b = document.getElementById('pbar'); if (b) b.style.width = '35%'; }, 350);
+            }
+          }
+        });
+      }, { threshold: 0.2 });
+      steps.forEach(function (s) { obs.observe(s); });
+    })();
+
+    (function () {
+          var els = document.querySelectorAll('.fadein-up');
+          var o = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('vis'); });
+          }, { threshold: 0.15 });
+          els.forEach(function (el) { o.observe(el); });
+        })();
+  </script>
+</body>
+
+</html>
